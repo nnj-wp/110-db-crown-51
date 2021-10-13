@@ -1,0 +1,22 @@
+const { Pool } = require('pg');
+
+const isProduction = process.env.NODE_ENV === 'production';
+
+const pool = new Pool({
+  // user: 'postgres',
+  // host: 'localhost',
+  // database: 'crown_51',
+  // password: '209410751',
+  // port: '5432',
+
+  connectionString: isProduction 
+    ? process.env.DATABASE_URL
+    : `postgresql://postgres:209410751@localhost:5432/crown_51`,
+});
+
+pool.query('SELECT * from category', (err, res) => {
+  console.log(JSON.stringify(res.rows));
+  pool.end();
+});
+
+module.exports = pool;
