@@ -1,4 +1,8 @@
-- 第一題
+* P1.  (local) 請修改 routes/index.js 在render index.ejs 時傳入學號及姓名，index.ejs 要有姓名及學號，需要用 <%= name %> 及 <%= id %> 接收傳入的學號及姓名，並顯示下圖片。繳交
+  . Chrome 截圖
+  . routes/index.js code (程式碼)
+  . views/index.ejs code (程式碼)
+
 
 ```
 routes/index.js =>
@@ -22,14 +26,16 @@ view/index.ejs =>
 ```
 
 ![第一題的圖](https://i.imgur.com/aZt2UTo.png)
-
-- 第二題
-
-```
-
-```
+* P2.  (local) 將 crown theme 裡面的 index.ejs 複製到 views/crown_xx.ejs，並能在Chrome 中顯示路由 /crown_xx，如下圖  localhost:3000/crown_xx。標題要有學號及姓名，如P1的傳入方式。請繳交
+  . Chrome 截圖，要有 URL
+  . routes/crown_xx.js ，相關重點以圖片呈現
+  . views/crown_xx.ejs  ，相關重點以圖片呈現
 
 ![第二題](https://i.imgur.com/9pBSbip.jpg)
+
+![第二題]()
+
+![第二題]()
 
 - 第三題
 
