@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 const crown_51 = require('./routes/crown_51');
 const crown2_51Router = require('./routes/crown2_51');
 const api_51_Router = require('./routes/api_51');
+const apiRouter = require('cors');
 
 var app = express();
 
@@ -21,12 +22,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+  cors({
+    origin: '*',
+  })
+);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/crown_51', crown_51);
 app.use('/crown2_51', crown2_51Router);
-app.use('/api_51', api_51_Router);
+app.use('/api_51', cors(), api_51_Router);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
